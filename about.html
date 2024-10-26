@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An app to learn Astronomy and get its updates." />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon"/>
+
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme-dark.bundle.css" id="stylesheetLight" disabled/>
+    <link rel="stylesheet" href="./assets/css/theme-dark.bundle.css" id="stylesheetDark" />
+
+    <style>body { display: none; }</style>
+
+    <!-- Title -->
+    <title>Astrophile</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-dark navbar-vibrant sticky-top navbar-expand-lg " id="topnav">
+    <div class="container">
+
+        <!-- Toggler -->
+        <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Brand -->
+        <a class="me-auto" href="./index.html">
+            <img src="./assets/img/logo.png" width="200" alt="..." >
+            <span class="badge bg-success-soft">Beta</span>
+        </a>
+
+        <!-- User -->
+        <div class="navbar-user">
+            <!-- Dropdown -->
+            <div class="dropdown">
+
+                <!-- Toggle -->
+                <a class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="./assets/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </a>
+
+                <!-- Menu -->
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a href="./about.html" class="dropdown-item active">About</a>
+                    <a href="./discussions.html" class="dropdown-item">Discussions</a>
+                    <hr class="dropdown-divider">
+                    <a class="dropdown-item active">Codophobic</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse me-lg-auto order-lg-first" id="navbar">
+
+            <!-- Navigation -->
+            <ul class="navbar-nav me-lg-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="topnavPages" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="true">
+                        Pages
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="topnavPages">
+                        <li>
+                            <a class="dropdown-item" href="./learn.html">
+                                Learn
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./quiz.html">
+                                Quiz
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./explore.html">
+                                Explore
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="topnavUpdates" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="true">
+                        Updates
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="topnavUpdates">
+                        <li>
+                            <a class="dropdown-item" href="./news.html">
+                                News
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./events.html">
+                                Events
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./calender.html">
+                                Astronomical Calender
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        
+    </div> <!-- / .container -->
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+    <!-- HEADER -->
+    <div class="header">
+
+        <!-- Image -->
+        <img src="assets/img/covers/group-cover.png" class="header-img-top" height="50px" alt="...">
+
+        <div class="container-fluid">
+
+            <!-- Body -->
+            <div class="header-body mt-n5 mt-md-n6">
+                <div class="row align-items-end">
+                    <div class="col-auto">
+
+                        <!-- Avatar -->
+                        <div class="avatar avatar-xxl header-avatar-top">
+                            <img src="assets/img/avatars/profiles/avatar-2.png" alt="..." class="avatar-img rounded-circle border border-4 border-body">
+                        </div>
+
+                    </div>
+                    <div class="col mb-3 ms-n3 ms-md-n2">
+
+                        <!-- Pretitle -->
+                        <h6 class="header-pretitle">
+                            Team
+                        </h6>
+
+                        <!-- Title -->
+                        <h1 class="header-title">
+                            Codophobic: Fear of Errors
+                        </h1>
+
+                    </div>
+                    <div class="col-12 col-md-auto mt-2 mt-md-0 mb-md-3">
+
+                        <!-- Button -->
+                        <a href="#!" class="btn btn-primary d-block d-md-inline-block lift">
+                            Subscribe
+                        </a>
+
+                    </div>
+                </div> <!-- / .row -->
+                <div class="row align-items-center">
+                    <div class="col">
+
+                        <!-- Nav -->
+                        <ul class="nav nav-tabs header-tabs" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link text-center active" id="pills-about-tab" data-bs-toggle="pill" data-bs-target="#pills-about" type="button" role="tab" aria-controls="pills-about" aria-selected="true">
+                                About
+                              </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link text-center" id="pills-members-tab" data-bs-toggle="pill" data-bs-target="#pills-members" type="button" role="tab" aria-controls="pills-members" aria-selected="true">
+                                Members
+                              </button>
+                            </li>
+                          </ul>
+
+                    </div>
+                </div>
+            </div> <!-- / .header-body -->
+
+        </div>
+    </div>
+
+
+    <!-- CONTENT -->
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade active show" id="pills-about" role="tabpanel" aria-labelledby="pills-about-tab">
+            <div class="container-fluid">
+                <h1 class="display-4 text-center mb-3">
+                    Astrophile 🚀
+                </h1>
+    
+                <!-- Subheading -->
+                <p class="text-muted text-center mb-5">
+                    Definition: A person who loves astronomy or constantly gazes at the stars.
+                </p>
+                <h2>What is this?</h2>
+            <p>
+                <b>Astrophile</b> is a website for everyone who loves space and wants to learn more about it. Here, you can explore easy-to-understand lessons about astronomy, test your knowledge with fun quizzes, and see a live view of the solar system with real-time simulations. Stay up-to-date with the latest space news, find out about upcoming events, and check our astronomy calendar to see what’s happening in the night sky. Plus, you can join our community forum to connect with others, ask questions, and share your love for the stars.
+            </p>
+            <div class="alert alert-danger" role="alert">"Updates" section is under development. We're sorry :(</div>
+            
+            <h2>View our &nbsp;
+                <a href="https://devpost.com/software/744967" class="btn btn-info" target="_blank" rel="noopener noreferrer">DevPost</a>
+                <a href="https://github.com/codejapoe/Astrophile" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Github</a>
+            </h2>
+            </div>
+        </div><hr>
+        <div class="tab-pane fade show" id="pills-members" role="tabpanel" aria-labelledby="pills-members-tab">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                        <!-- Card -->
+                        <div class="card">
+
+                            <!-- Dropdown -->
+                            <div class="dropdown card-dropdown">
+                                <a href="https://codejapoe.xyz" target="_blank" class="dropdown-ellipses dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-more-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="https://codejapoe.xyz" target="_blank" class="dropdown-item">
+                                        View Website
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Image -->
+                            <img src="assets/img/covers/profile-cover-7.jpg" alt="..." class="card-img-top">
+
+                            <!-- Body -->
+                            <div class="card-body text-center">
+
+                                <!-- Image -->
+                                <a class="avatar avatar-xl card-avatar card-avatar-top">
+                                    <img src="assets/img/avatars/profiles/codejapoe.jpeg" class="avatar-img rounded-circle border border-4 border-card" alt="...">
+                                </a>
+
+                                <!-- Heading -->
+                                <h2 class="card-title">
+                                    <a>Codejapoe</a>
+                                </h2>
+
+                                <!-- Text -->
+                                <p class="small text-muted mb-3">
+                                    Working on "Updates" Sections.
+                                </p>
+
+                                <!-- Badges -->
+                                <p class="card-text">
+                                    <span class="badge bg-secondary-soft">
+                                        Developer
+                                    </span>
+                                    <span class="badge bg-secondary-soft">
+                                        Content creator
+                                    </span>
+                                </p>
+                                
+
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="card-footer card-footer-boxed">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-auto">
+
+                                        <!-- Status -->
+                                        <small>
+                                            <span class="text-success">●</span> Online
+                                        </small>
+
+                                    </div>
+                                    <div class="col-auto">
+
+                                        <!-- Link -->
+                                        <a href="https://instagram.com/codejapoe" target="_blank" class="btn btn-sm btn-primary">
+                                            Follow
+                                        </a>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                        <!-- Card -->
+                        <div class="card">
+
+                            <!-- Image -->
+                            <img src="assets/img/covers/profile-cover-2.jpg" alt="..." class="card-img-top">
+
+                            <!-- Body -->
+                            <div class="card-body text-center">
+
+                                <!-- Image -->
+                                <a class="avatar avatar-xl card-avatar card-avatar-top">
+                                    <img src="assets/img/avatars/profiles/noel.jpg" class="avatar-img rounded-circle border border-4 border-card" alt="...">
+                                </a>
+
+                                <!-- Heading -->
+                                <h2 class="card-title">
+                                    <a>Chrissy Ho</a>
+                                </h2>
+
+                                <!-- Text -->
+                                <p class="small text-muted mb-3">
+                                    Working on Presentation.
+                                </p>
+
+                                <!-- Badges -->
+                                <p class="card-text">
+                                    <span class="badge bg-secondary-soft">
+                                        Comp Sci Student
+                                    </span>
+                                </p>
+                                
+
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="card-footer card-footer-boxed">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-auto">
+
+                                        <!-- Status -->
+                                        <small>
+                                            <span class="text-success">●</span> Online
+                                        </small>
+
+                                    </div>
+                                    <div class="col-auto">
+
+                                        <!-- Link -->
+                                        <a href="https://instagram.com/_el.not.en_/" target="_blank" class="btn btn-sm btn-primary">
+                                            Follow
+                                        </a>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                        <!-- Card -->
+                        <div class="card">
+
+                            <!-- Image -->
+                            <img src="assets/img/covers/profile-cover-4.jpg" alt="..." class="card-img-top">
+
+                            <!-- Body -->
+                            <div class="card-body text-center">
+
+                                <!-- Image -->
+                                <a class="avatar avatar-xl card-avatar card-avatar-top">
+                                    <img src="assets/img/avatars/profiles/reese.jpg" class="avatar-img rounded-circle border border-4 border-card" alt="...">
+                                </a>
+
+                                <!-- Heading -->
+                                <h2 class="card-title">
+                                    <a>Reese</a>
+                                </h2>
+
+                                <!-- Text -->
+                                <p class="small text-muted mb-3">
+                                    Working on API calls.
+                                </p>
+
+                                <!-- Badges -->
+                                <p class="card-text">
+                                    <span class="badge bg-secondary-soft">
+                                        Programmer
+                                    </span>
+                                </p>
+                                
+
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="card-footer card-footer-boxed">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-auto">
+
+                                        <!-- Status -->
+                                        <small>
+                                            <span class="text-success">●</span> Online
+                                        </small>
+
+                                    </div>
+                                    <div class="col-auto">
+
+                                        <!-- Link -->
+                                        <a href="ttps://www.instagram.com/minthant_reese/" target="_blank" class="btn btn-sm btn-primary">
+                                            Follow
+                                        </a>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+
+                        <!-- Card -->
+                        <div class="card">
+
+                            <!-- Image -->
+                            <img src="assets/img/covers/profile-cover-5.jpg" alt="..." class="card-img-top">
+
+                            <!-- Body -->
+                            <div class="card-body text-center">
+
+                                <!-- Image -->
+                                <a class="avatar avatar-xl card-avatar card-avatar-top">
+                                    <img src="assets/img/avatars/profiles/khanh.jpg" class="avatar-img rounded-circle border border-4 border-card" alt="...">
+                                </a>
+
+                                <!-- Heading -->
+                                <h2 class="card-title">
+                                    <a>Khanh</a>
+                                </h2>
+
+                                <!-- Text -->
+                                <p class="small text-muted mb-3">
+                                    Working on Animations.
+                                </p>
+
+                                <!-- Badges -->
+                                <p class="card-text">
+                                    <span class="badge bg-secondary-soft">
+                                        Comp Sci Student
+                                    </span>
+                                </p>
+                                
+
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="card-footer card-footer-boxed">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-auto">
+
+                                        <!-- Status -->
+                                        <small>
+                                            <span class="text-success">●</span> Online
+                                        </small>
+
+                                    </div>
+                                    <div class="col-auto">
+
+                                        <!-- Link -->
+                                        <a href="https://www.instagram.com/ciniuoii_/" target="_blank" class="btn btn-sm btn-primary">
+                                            Follow
+                                        </a>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- JAVASCRIPT -->
+
+<!-- Discussions JS -->
+<script src="./assets/js/discussions.js" type="module"></script>
+
+<!-- Map JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Vendor JS -->
+<script src="./assets/js/vendor.bundle.js"></script>
+
+<!-- Theme JS -->
+<script src="./assets/js/theme.bundle.js"></script>
+
+</body>
+</html>

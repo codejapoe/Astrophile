@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An app to learn Astronomy and get its updates." />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon"/>
+
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme-dark.bundle.css" id="stylesheetLight" disabled/>
+    <link rel="stylesheet" href="./assets/css/theme-dark.bundle.css" id="stylesheetDark" />
+
+    <style>body { display: none; }</style>
+
+    <!-- Title -->
+    <title>Astrophile</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-dark navbar-vibrant sticky-top navbar-expand-lg " id="topnav">
+    <div class="container">
+
+        <!-- Toggler -->
+        <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Brand -->
+        <a class="me-auto" href="./index.html">
+            <img src="./assets/img/logo.png" width="200" alt="..." >
+            <span class="badge bg-success-soft">Beta</span>
+        </a>
+
+        <!-- User -->
+        <div class="navbar-user">
+            <!-- Dropdown -->
+            <div class="dropdown">
+
+                <!-- Toggle -->
+                <a class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="./assets/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </a>
+
+                <!-- Menu -->
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a href="./about.html" class="dropdown-item">About</a>
+                    <a href="./discussions.html" class="dropdown-item active">Discussions</a>
+                    <hr class="dropdown-divider">
+                    <a class="dropdown-item active">Codophobic</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse me-lg-auto order-lg-first" id="navbar">
+
+            <!-- Navigation -->
+            <ul class="navbar-nav me-lg-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="topnavPages" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="true">
+                        Pages
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="topnavPages">
+                        <li>
+                            <a class="dropdown-item" href="./learn.html">
+                                Learn
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./quiz.html">
+                                Quiz
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./explore.html">
+                                Explore
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="topnavUpdates" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="true">
+                        Updates
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="topnavUpdates">
+                        <li>
+                            <a class="dropdown-item" href="./news.html">
+                                News
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./events.html">
+                                Events
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./calender.html">
+                                Astronomical Calender
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        
+    </div> <!-- / .container -->
+</nav>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12">
+
+            <!-- Header -->
+            <div class="header">
+                <div class="header-body">
+                    <div class="row align-items-end">
+                        <div class="col">
+                
+                        <h6 class="header-pretitle">
+                            Forum
+                        </h6>
+                
+                        <h1 class="header-title">
+                            Discussions
+                        </h1>
+                        
+                        </div>
+                        <div class="col-auto">
+                            <!-- Buttons -->
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Post">
+                                <span class="fe fe-edit"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="posts"></div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="Post" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+
+        <form class="form">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="modal-title" id="postModalLabel">Discussion Post</h5>
+                <button type="button" class="btn btn-rounded-circle btn-white" data-bs-dismiss="modal" aria-label="Close">
+                    <span class="fe fe-x"></span>
+                </button>
+                </div>
+
+                <div class="modal-body">
+                    <p>We will save your name and social link so you don't need to type again next time.</p>
+
+                    <!-- Form floating -->
+                    <div class="form-floating form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Codejapoe (example)">
+                        <label for="name">Name</label>
+                    </div>
+
+                    <div class="form-floating form-group">
+                        <input type="text" class="form-control" id="social" placeholder="Social links">
+                        <label for="social">Social Link</label>
+                    </div>
+
+                    <!-- Form floating -->
+                    <div class="form-floating form-group">
+                        <input type="text" class="form-control" id="content" placeholder="Astronomy show at De Anza on Oct 26">
+                        <label for="content">What's on your mind?</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="post-btn" class="btn btn-primary">Post</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- JAVASCRIPT -->
+
+<!-- Discussions JS -->
+<script src="./assets/js/discussions.js" type="module"></script>
+
+<!-- Map JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Vendor JS -->
+<script src="./assets/js/vendor.bundle.js"></script>
+
+<!-- Theme JS -->
+<script src="./assets/js/theme.bundle.js"></script>
+
+</body>
+</html>

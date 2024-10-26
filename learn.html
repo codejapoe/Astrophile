@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An app to learn Astronomy and get its updates." />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon"/>
+
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme-dark.bundle.css" id="stylesheetLight" disabled/>
+    <link rel="stylesheet" href="./assets/css/theme-dark.bundle.css" id="stylesheetDark" />
+
+    <style>body { display: none; }</style>
+
+    <!-- Title -->
+    <title>Astrophile</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-dark navbar-vibrant sticky-top navbar-expand-lg " id="topnav">
+    <div class="container">
+
+        <!-- Toggler -->
+        <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Brand -->
+        <a class="me-auto" href="./index.html">
+            <img src="./assets/img/logo.png" width="200" alt="..." >
+            <span class="badge bg-success-soft">Beta</span>
+        </a>
+
+        <!-- User -->
+        <div class="navbar-user">
+            <!-- Dropdown -->
+            <div class="dropdown">
+
+                <!-- Toggle -->
+                <a class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="./assets/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </a>
+
+                <!-- Menu -->
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a href="./about.html" class="dropdown-item">About</a>
+                    <a href="./discussions.html" class="dropdown-item">Discussions</a>
+                    <hr class="dropdown-divider">
+                    <a class="dropdown-item active">Codophobic</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse me-lg-auto order-lg-first" id="navbar">
+
+            <!-- Navigation -->
+            <ul class="navbar-nav me-lg-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" id="topnavPages" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="true">
+                        Pages
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="topnavPages">
+                        <li>
+                            <a class="dropdown-item active" href="./learn.html">
+                                Learn
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./quiz.html">
+                                Quiz
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./explore.html">
+                                Explore
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="topnavUpdates" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="true">
+                        Updates
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="topnavUpdates">
+                        <li>
+                            <a class="dropdown-item" href="./news.html">
+                                News
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./events.html">
+                                Events
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./calender.html">
+                                Astronomical Calender
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        
+    </div> <!-- / .container -->
+</nav>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12">
+
+            <!-- Header -->
+            <div class="header">
+                <div class="header-body">
+                  <div class="row align-items-end">
+                    <div class="col">
+              
+                      <h6 class="header-pretitle">
+                        Resources
+                      </h6>
+              
+                      <h1 class="header-title">
+                        Learn
+                      </h1>
+                      
+                    </div>
+                    <div class="col-auto">
+              
+                      <ul class="nav nav-tabs header-tabs" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link text-center active" id="pills-articles-tab" data-bs-toggle="pill" data-bs-target="#pills-articles" type="button" role="tab" aria-controls="pills-articles" aria-selected="true">
+                            Articles
+                          </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link text-center" id="pills-videos-tab" data-bs-toggle="pill" data-bs-target="#pills-videos" type="button" role="tab" aria-controls="pills-videos" aria-selected="true">
+                            Videos
+                          </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link text-center" id="pills-books-tab" data-bs-toggle="pill" data-bs-target="#pills-books" type="button" role="tab" aria-controls="pills-books" aria-selected="true">
+                            Books
+                          </button>
+                        </li>
+                      </ul>
+              
+                    </div>
+                  </div> 
+              
+                </div>
+            </div>
+
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade active show" id="pills-articles" role="tabpanel" aria-labelledby="pills-articles-tab">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+        
+                                <!-- Card -->
+                                <div class="card" data-list='{"valueNames": ["item-title", "item-des", "item-diff", "item-category"], "page": 10, "pagination": {"paginationClass": "list-pagination"}}' id="articles">
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+        
+                                                <!-- Form -->
+                                                <form>
+                                                    <div class="input-group input-group-flush input-group-merge input-group-reverse">
+                                                        <input class="form-control list-search" type="search" placeholder="Search">
+                                                        <span class="input-group-text">
+                                      <i class="fe fe-search"></i>
+                                    </span>
+                                                    </div>
+                                                </form>
+        
+                                            </div>
+                                            <div class="col-auto me-n3">
+                                                <p>10 entries per page</p>
+                                            </div>
+                                        </div> <!-- / .row -->
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-hover table-nowrap card-table">
+                                            <thead>
+                                            <tr>
+                                                <th>
+                                                    <a class="list-sort text-muted" href="#">Title</a>
+                                                </th>
+                                                <th>
+                                                    <a class="list-sort text-muted" href="#">Description</a>
+                                                </th>
+                                                <th>
+                                                    <a class="list-sort text-muted" href="#">Difficulty</a>
+                                                </th>
+                                                <th>
+                                                    <a class="list-sort text-muted" href="#">Category</a>
+                                                </th><th>
+                                                    <a class="list-sort text-muted" href="#">Link</a>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                             
+                                            <tbody class="list fs-base">
+                                                <tr>
+                                                    <td><span class="item-title">"Astronomy for Beginners: Getting Started"</span></td>
+                                                    <td><span class="item-des">This guide offers tips for getting started in astronomy, including recognizing constellations and star maps.</span></td>
+                                                    <td><span class="item-diff">Beginner</span></td>
+                                                    <td><span class="item-category">Stargazing Essentials</span></td>
+                                                    <td class="text-end"><a href="https://skyandtelescope.org/astronomy-resources/getting-started-in-astronomy/" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"What is Light Pollution?"</span></td>
+                                                    <td><span class="item-des">An introduction to light pollution and its impact on stargazing, with tips to mitigate it in your observations.</span></td>
+                                                    <td><span class="item-diff">Beginner</span></td>
+                                                    <td><span class="item-category">Astronomy Basics</span></td>
+                                                    <td class="text-end"><a href="https://www.space.com/what-is-light-pollution.html" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"10 Facts About Black Holes"</span></td>
+                                                    <td><span class="item-des">Easy-to-digest facts to introduce you to the basics of black holes.</span></td>
+                                                    <td><span class="item-diff">Beginner</span></td>
+                                                    <td><span class="item-category">Black Hole Basics</span></td>
+                                                    <td class="text-end"><a href="https://www.nasa.gov/10-facts-black-holes" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Exploring Our Solar System"</span></td>
+                                                    <td><span class="item-des">Learn about the planets and their unique features.</span></td>
+                                                    <td><span class="item-diff">Beginner</span></td>
+                                                    <td><span class="item-category">Solar System Exploration</span></td>
+                                                    <td class="text-end"><a href="https://aaa.org/exploring-our-solar-system" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Understanding the Phases of the Moon"</span></td>
+                                                    <td><span class="item-des">Explains the Moon's phases and how to observe them.</span></td>
+                                                    <td><span class="item-diff">Beginner</span></td>
+                                                    <td><span class="item-category">Lunar Studies</span></td>
+                                                    <td class="text-end"><a href="https://www.space.com/moon-phases" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Types of Telescopes and Their Uses"</span></td>
+                                                    <td><span class="item-des">A basic guide to telescopes, including different types and how they work.</span></td>
+                                                    <td><span class="item-diff">Beginner</span></td>
+                                                    <td><span class="item-category">Astronomy Equipment</span></td>
+                                                    <td class="text-end"><a href="https://www.astrobackyard.com/types-of-telescopes/" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"The History of the Milky Way"</span></td>
+                                                    <td><span class="item-des">A deeper dive into our galaxy, exploring its formation and structure.</span></td>
+                                                    <td><span class="item-diff">Intermediate</span></td>
+                                                    <td><span class="item-category">Galactic Studies</span></td>
+                                                    <td class="text-end"><a href="https://www.universetoday.com/galactic-history" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Understanding Stellar Evolution"</span></td>
+                                                    <td><span class="item-des">Learn about how stars are born, live, and die.</span></td>
+                                                    <td><span class="item-diff">Intermediate</span></td>
+                                                    <td><span class="item-category">Stellar Physics</span></td>
+                                                    <td class="text-end"><a href="https://www.astrobackyard.com/stellar-evolution" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Telescope Basics: Choosing the Right Telescope for You"</span></td>
+                                                    <td><span class="item-des">Detailed advice on selecting equipment for intermediate observers.</span></td>
+                                                    <td><span class="item-diff">Intermediate</span></td>
+                                                    <td><span class="item-category">Astronomy Equipment</span></td>
+                                                    <td class="text-end"><a href="https://www.chuckhawks.com/telescope-basics" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"The Science of Exoplanet Detection"</span></td>
+                                                    <td><span class="item-des">Explains how astronomers find and study planets beyond our solar system.</span></td>
+                                                    <td><span class="item-diff">Intermediate</span></td>
+                                                    <td><span class="item-category">Exoplanet Studies</span></td>
+                                                    <td class="text-end"><a href="https://www.eso.org/science/exoplanet-detection" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"The Lifecycle of Stars"</span></td>
+                                                    <td><span class="item-des">A comprehensive overview of how stars form, age, and evolve.</span></td>
+                                                    <td><span class="item-diff">Intermediate</span></td>
+                                                    <td><span class="item-category">Stellar Evolution</span></td>
+                                                    <td class="text-end"><a href="https://www.universetoday.com/star-lifecycle" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"The Big Bang Theory Explained"</span></td>
+                                                    <td><span class="item-des">Explore the foundations of the Big Bang theory and how it shapes our understanding of the cosmos.</span></td>
+                                                    <td><span class="item-diff">Intermediate</span></td>
+                                                    <td><span class="item-category">Cosmology</span></td>
+                                                    <td class="text-end"><a href="https://www.space.com/what-is-the-big-bang-theory.html" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"The Search for Extraterrestrial Life"</span></td>
+                                                    <td><span class="item-des">An investigation into how we search for signs of life beyond Earth.</span></td>
+                                                    <td><span class="item-diff">Intermediate</span></td>
+                                                    <td><span class="item-category">Astrobiology</span></td>
+                                                    <td class="text-end"><a href="https://www.seti.org/understanding-the-search-for-life" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Pulsars: Lighthouses of the Universe"</span></td>
+                                                    <td><span class="item-des">Examines pulsars and their unique behavior in the cosmos.</span></td>
+                                                    <td><span class="item-diff">Intermediate</span></td>
+                                                    <td><span class="item-category">Neutron Stars</span></td>
+                                                    <td class="text-end"><a href="https://www.space.com/what-are-pulsars" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Introduction to Radio Astronomy"</span></td>
+                                                    <td><span class="item-des">An overview of radio astronomy and its contributions to space studies.</span></td>
+                                                    <td><span class="item-diff">Intermediate</span></td>
+                                                    <td><span class="item-category">Observational Astronomy</span></td>
+                                                    <td class="text-end"><a href="https://www.nrao.edu/radio-astronomy" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"The Formation of the Solar System"</span></td>
+                                                    <td><span class="item-des">Discusses theories on how our solar system formed billions of years ago.</span></td>
+                                                    <td><span class="item-diff">Intermediate</span></td>
+                                                    <td><span class="item-category">Solar System Studies</span></td>
+                                                    <td class="text-end"><a href="https://solarsystem.nasa.gov/solar-system-formation" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Astrobiology: The Search for Life in the Universe"</span></td>
+                                                    <td><span class="item-des">Focuses on how scientists search for life beyond Earth and study life in extreme environments.</span></td>
+                                                    <td><span class="item-diff">Intermediate</span></td>
+                                                    <td><span class="item-category">Astrobiology</span></td>
+                                                    <td class="text-end"><a href="https://astrobiology.nasa.gov/the-search-for-life" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Supernovae: The Death of Stars"</span></td>
+                                                    <td><span class="item-des">Explores the phenomena of supernovae and their cosmic impacts.</span></td>
+                                                    <td><span class="item-diff">Intermediate</span></td>
+                                                    <td><span class="item-category">Stellar Phenomena</span></td>
+                                                    <td class="text-end"><a href="https://www.nasa.gov/supernova-explained" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"The Evolution of Galaxies"</span></td>
+                                                    <td><span class="item-des">An overview of how galaxies form and evolve over time.</span></td>
+                                                    <td><span class="item-diff">Intermediate</span></td>
+                                                    <td><span class="item-category">Galactic Studies</span></td>
+                                                    <td class="text-end"><a href="https://www.astronomy.com/galactic-evolution" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"The Interstellar Medium and Star Formation"</span></td>
+                                                    <td><span class="item-des">An advanced look at how gas and dust clouds in space lead to new stars.</span></td>
+                                                    <td><span class="item-diff">Advanced</span></td>
+                                                    <td><span class="item-category">Astrophysics</span></td>
+                                                    <td class="text-end"><a href="https://www.aas.org/interstellar-medium" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"How Dark Matter Shapes the Universe"</span></td>
+                                                    <td><span class="item-des">A deeper dive into one of astronomy’s biggest mysteries.</span></td>
+                                                    <td><span class="item-diff">Advanced</span></td>
+                                                    <td><span class="item-category">Cosmology</span></td>
+                                                    <td class="text-end"><a href="https://www.space.com/dark-matter-universe" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Gravitational Waves: A New Window into the Cosmos"</span></td>
+                                                    <td><span class="item-des">Covers the discovery and importance of gravitational waves in modern astrophysics.</span></td>
+                                                    <td><span class="item-diff">Advanced</span></td>
+                                                    <td><span class="item-category">Astrophysics</span></td>
+                                                    <td class="text-end"><a href="https://www.nasa.gov/gravitational-waves" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"The Dark Energy Mystery"</span></td>
+                                                    <td><span class="item-des">Discover the role of dark energy and how it’s influencing our universe.</span></td>
+                                                    <td><span class="item-diff">Advanced</span></td>
+                                                    <td><span class="item-category">Cosmology</span></td>
+                                                    <td class="text-end"><a href="https://www.space.com/what-is-dark-energy.html" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Relativity and the Warping of Space-Time"</span></td>
+                                                    <td><span class="item-des">Delve into how mass affects space-time, making relativity a core concept of astrophysics.</span></td>
+                                                    <td><span class="item-diff">Advanced</span></td>
+                                                    <td><span class="item-category">Astrophysics</span></td>
+                                                    <td class="text-end"><a href="https://www.nasa.gov/relativity-and-warping-of-space-time" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Discovering Exoplanets: The Next Frontier"</span></td>
+                                                    <td><span class="item-des">The methods used to locate and study exoplanets in distant solar systems.</span></td>
+                                                    <td><span class="item-diff">Advanced</span></td>
+                                                    <td><span class="item-category">Exoplanet Studies</span></td>
+                                                    <td class="text-end"><a href="https://exoplanet.nasa.gov/discovering-exoplanets" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Quasars: The Brightest Objects in the Universe"</span></td>
+                                                    <td><span class="item-des">Examines quasars and their role in understanding galactic evolution.</span></td>
+                                                    <td><span class="item-diff">Advanced</span></td>
+                                                    <td><span class="item-category">Galactic Studies</span></td>
+                                                    <td class="text-end"><a href="https://www.space.com/what-is-a-quasar" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"The Role of Neutron Stars in Astrophysics"</span></td>
+                                                    <td><span class="item-des">Examines neutron stars, their properties, and their significance in physics.</span></td>
+                                                    <td><span class="item-diff">Advanced</span></td>
+                                                    <td><span class="item-category">Neutron Stars</span></td>
+                                                    <td class="text-end"><a href="https://www.space.com/what-are-neutron-stars" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"How Galaxies Collide"</span></td>
+                                                    <td><span class="item-des">Explores the process and outcomes of galactic collisions.</span></td>
+                                                    <td><span class="item-diff">Advanced</span></td>
+                                                    <td><span class="item-category">Galactic Studies</span></td>
+                                                    <td class="text-end"><a href="https://www.astronomy.com/galactic-collisions" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"The structure and dynamics of the Milky Way Galaxy"</span></td>
+                                                    <td><span class="item-des">Detailed exploration of the structure of our galaxy, the Milky Way.</span></td>
+                                                    <td><span class="item-diff">Advanced</span></td>
+                                                    <td><span class="item-category">Galactic Studies</span></td>
+                                                    <td class="text-end"><a href="https://www.britannica.com/place/Milky-Way-Galaxy/The-structure-and-dynamics-of-the-Milky-Way-Galaxy" target="_blank"><i class="fe fe-external-link"></i></a></td> 
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"How Dark Matter Shapes the Universe"</span></td>
+                                                    <td><span class="item-des">A deeper dive into one of astronomy’s biggest mysteries.</span></td>
+                                                    <td><span class="item-diff">Advanced</span></td>
+                                                    <td><span class="item-category">Cosmology</span></td>
+                                                    <td class="text-end"><a href="https://www.space.com/dark-matter-universe" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Gravitational Waves: A New Window into the Cosmos"</span></td>
+                                                    <td><span class="item-des">Covers the discovery and importance of gravitational waves in modern astrophysics.</span></td>
+                                                    <td><span class="item-diff">Advanced</span></td>
+                                                    <td><span class="item-category">Astrophysics</span></td>
+                                                    <td class="text-end"><a href="https://www.nasa.gov/gravitational-waves" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"Cosmology and the Big Bang Theory"</span></td>
+                                                    <td><span class="item-des">A high-level article on the early moments of the universe and cosmic inflation.</span></td>
+                                                    <td><span class="item-diff">Expert</span></td>
+                                                    <td><span class="item-category">Cosmology</span></td>
+                                                    <td class="text-end"><a href="https://www.nasa.gov/cosmology-big-bang-theory" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="item-title">"String Theory and Black Holes"</span></td>
+                                                    <td><span class="item-des">Advanced theories about black hole behavior in the framework of string theory.</span></td>
+                                                    <td><span class="item-diff">Expert</span></td>
+                                                    <td><span class="item-category">Theoretical Physics</span></td>
+                                                    <td class="text-end"><a href="https://www.aps.org/string-theory-black-holes" target="_blank"><i class="fe fe-external-link"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between">
+        
+                                        <!-- Pagination (prev) -->
+                                        <ul class="list-pagination-prev pagination pagination-tabs card-pagination">
+                                            <li class="page-item">
+                                                <a class="page-link ps-0 pe-4 border-end" href="#">
+                                                    <i class="fe fe-arrow-left me-1"></i> Prev
+                                                </a>
+                                            </li>
+                                        </ul>
+        
+                                        <!-- Pagination -->
+                                        <ul class="list-pagination pagination pagination-tabs card-pagination"></ul>
+        
+                                        <!-- Pagination (next) -->
+                                        <ul class="list-pagination-next pagination pagination-tabs card-pagination">
+                                            <li class="page-item">
+                                                <a class="page-link ps-4 pe-0 border-start" href="#">
+                                                    Next <i class="fe fe-arrow-right ms-1"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+        
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div> <!-- / .row -->
+                    </div>
+                </div>
+                <div class="tab-pane fade show" id="pills-videos" role="tabpanel" aria-labelledby="pills-videos-tab">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+        
+                                <!-- Card -->
+                                <div class="card" data-list='{"valueNames": ["item-title", "item-des", "item-diff", "item-category"], "page": 10, "pagination": {"paginationClass": "list-pagination"}}' id="videos">
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+        
+                                                <!-- Form -->
+                                                <form>
+                                                    <div class="input-group input-group-flush input-group-merge input-group-reverse">
+                                                        <input class="form-control list-search" type="search" placeholder="Search">
+                                                        <span class="input-group-text">
+                                      <i class="fe fe-search"></i>
+                                    </span>
+                                                    </div>
+                                                </form>
+        
+                                            </div>
+                                            <div class="col-auto me-n3">
+                                                <p>10 entries per page</p>
+                                            </div>
+                                        </div> <!-- / .row -->
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-hover table-nowrap card-table">
+                                            <thead>
+                                            <tr>
+                                                <th>
+                                                    <a class="list-sort text-muted" href="#">Title</a>
+                                                </th>
+                                                <th>
+                                                    <a class="list-sort text-muted" href="#">Description</a>
+                                                </th>
+                                                <th>
+                                                    <a class="list-sort text-muted" href="#">Difficulty</a>
+                                                </th>
+                                                <th>
+                                                    <a class="list-sort text-muted" href="#">Category</a>
+                                                </th><th>
+                                                    <a class="list-sort text-muted" href="#">Link</a>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                             
+                                            <tbody class="list fs-base"><tr> <td>Astronomy for Beginners: 5 Simple Tips</td> <td>Introduction to essential stargazing tips.</td> <td>Beginner</td> <td>Stargazing Basics</td> <td><a href="https://www.youtube.com/watch?v=Gl9qtBbKhEk" target="_blank"><i class="fe fe-youtube"></i></a></td> </tr> <tr> <td>Crash Course Astronomy #1</td> <td>Basics of astronomy with host Phil Plait.</td> <td>Beginner</td> <td>Introduction to Astronomy</td> <td><a href="https://www.youtube.com/watch?v=0rHUDWjR5gg" target="_blank"><i class="fe fe-youtube"></i></a></td> </tr> <tr> <td>Backyard Stargazing Essentials</td> <td>Guide on observing stars from home.</td> <td>Beginner</td> <td>Practical Astronomy</td> <td><a href="https://www.youtube.com/watch?v=uc8EFYoAf7Q" target="_blank"><i class="fe fe-youtube"></i></a></td> </tr> <!-- Intermediate --> <tr> <td>Intermediate Astronomy Observing Techniques</td> <td>Explore more advanced telescope techniques.</td> <td>Intermediate</td> <td>Telescope Techniques</td> <td><a href="https://www.youtube.com/watch?v=5CqhHUXFL5E" target="_blank"><i class="fe fe-youtube"></i></a></td> </tr> <tr> <td>Center for Astrophysics: Public Lectures</td> <td>Scientific lectures from astronomy experts.</td> <td>Intermediate</td> <td>Lectures</td> <td><a href="https://www.youtube.com/channel/UC-UUo6Y7fP0N41Qw7KcKtcQ" target="_blank"><i class="fe fe-youtube"></i></a></td> </tr> <!-- Advanced --> <tr> <td>Advanced Astronomy Topics</td> <td>Astrobiology, Fermi Paradox, and more.</td> <td>Advanced</td> <td>Astrophysics</td> <td><a href="https://www.youtube.com/playlist?list=PLMstuCtE3P5y450c2_IFv_aGPn0TfGqsz" target="_blank"><i class="fe fe-youtube"></i></a></td> </tr> <tr> <td>Astronomy Lectures (Semester Course)</td> <td>In-depth astronomy course covering key concepts.</td> <td>Advanced</td> <td>Academic Course</td> <td><a href="https://www.youtube.com/playlist?list=PL2yn_e5rlIW0bsNIOc3dEadJ6YwTOoj-Z" target="_blank"><i class="fe fe-youtube"></i></a></td> </tr> <!-- Expert --> <tr> <td>Caltech Astronomy Public Lecture Series</td> <td>Monthly lectures by Caltech scientists.</td> <td>Expert</td> <td>Professional Lectures</td> <td><a href="https://www.youtube.com/channel/UC-iD3yQD23t7mSfuMoItkqA" target="_blank"><i class="fe fe-youtube"></i></a></td> </tr> <tr> <td>Physics of Cosmology</td> <td>Lecture series on the physics governing the universe.</td> <td>Expert</td> <td>Cosmology</td> <td><a href="https://www.youtube.com/playlist?list=PLA844B8AD384A9425" target="_blank"><i class="fe fe-youtube"></i></a></td> </tr> </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between">
+        
+                                        <!-- Pagination (prev) -->
+                                        <ul class="list-pagination-prev pagination pagination-tabs card-pagination">
+                                            <li class="page-item">
+                                                <a class="page-link ps-0 pe-4 border-end" href="#">
+                                                    <i class="fe fe-arrow-left me-1"></i> Prev
+                                                </a>
+                                            </li>
+                                        </ul>
+        
+                                        <!-- Pagination -->
+                                        <ul class="list-pagination pagination pagination-tabs card-pagination"></ul>
+        
+                                        <!-- Pagination (next) -->
+                                        <ul class="list-pagination-next pagination pagination-tabs card-pagination">
+                                            <li class="page-item">
+                                                <a class="page-link ps-4 pe-0 border-start" href="#">
+                                                    Next <i class="fe fe-arrow-right ms-1"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+        
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div> <!-- / .row -->
+                    </div>
+                </div>
+                <div class="tab-pane fade show" id="pills-books" role="tabpanel" aria-labelledby="pills-books-tab">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-12">
+        
+                                <!-- Card -->
+                                <div class="card" data-list='{"valueNames": ["item-title", "item-des", "item-diff", "item-category"], "page": 10, "pagination": {"paginationClass": "list-pagination"}}' id="videos">
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+        
+                                                <!-- Form -->
+                                                <form>
+                                                    <div class="input-group input-group-flush input-group-merge input-group-reverse">
+                                                        <input class="form-control list-search" type="search" placeholder="Search">
+                                                        <span class="input-group-text">
+                                      <i class="fe fe-search"></i>
+                                    </span>
+                                                    </div>
+                                                </form>
+        
+                                            </div>
+                                            <div class="col-auto me-n3">
+                                                <p>10 entries per page</p>
+                                            </div>
+                                        </div> <!-- / .row -->
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-hover table-nowrap card-table">
+                                            <thead>
+                                            <tr>
+                                                <th>
+                                                    <a class="list-sort text-muted" href="#">Title</a>
+                                                </th>
+                                                <th>
+                                                    <a class="list-sort text-muted" href="#">Description</a>
+                                                </th>
+                                                <th>
+                                                    <a class="list-sort text-muted" href="#">Difficulty</a>
+                                                </th>
+                                                <th>
+                                                    <a class="list-sort text-muted" href="#">Category</a>
+                                                </th><th>
+                                                    <a class="list-sort text-muted" href="#">Link</a>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                             
+                                            <tbody class="list fs-base"> <tr> <td><span class="item-title">Turn Left at Orion</span></td> <td><span class="item-des">A practical guide for beginners, providing a comprehensive overview of constellations and telescope tips for clear night observations.</span></td> <td><span class="item-diff">Beginner</span></td> <td><span class="item-category">Stargazing</span></td> <td class="text-end"><a href="https://www.amazon.com/Turn-Left-Orion-Hundreds-Telescope/dp/0521153972" target="_blank"><i class="fe fe-external-link"></i></a></td> </tr> <tr> <td><span class="item-title">Astrophysics for People in a Hurry</span></td> <td><span class="item-des">Neil deGrasse Tyson’s accessible overview of the universe, from the Big Bang to black holes and dark matter.</span></td> <td><span class="item-diff">Beginner</span></td> <td><span class="item-category">Astrophysics</span></td> <td class="text-end"><a href="https://www.amazon.com/Astrophysics-People-Hurry-Neil-Tyson/dp/0393609391" target="_blank"><i class="fe fe-external-link"></i></a></td> </tr> <tr> <td><span class="item-title">50 Things to See with a Small Telescope</span></td> <td><span class="item-des">Great for young and beginner astronomers, this book covers visible objects with clear star maps and explanations.</span></td> <td><span class="item-diff">Beginner</span></td> <td><span class="item-category">Stargazing</span></td> <td class="text-end"><a href="https://www.amazon.com/50-Things-See-Small-Telescope/dp/1491910850" target="_blank"><i class="fe fe-external-link"></i></a></td> </tr> <tr> <td><span class="item-title">The Astronomy Book: Big Ideas Simply Explained</span></td> <td><span class="item-des">Offers a visual journey through the history of astronomy, packed with colorful illustrations and mind maps.</span></td> <td><span class="item-diff">Beginner</span></td> <td><span class="item-category">History</span></td> <td class="text-end"><a href="https://www.amazon.com/Astronomy-Book-Ideas-Simply-Explained/dp/1465464185" target="_blank"><i class="fe fe-external-link"></i></a></td> </tr> <tr> <td><span class="item-title">NightWatch: A Practical Guide to Viewing the Universe</span></td> <td><span class="item-des">One of the best-selling guides, ideal for backyard stargazers with practical information on telescopes and star maps.</span></td> <td><span class="item-diff">Beginner</span></td> <td><span class="item-category">Stargazing</span></td> <td class="text-end"><a href="https://www.amazon.com/NightWatch-Practical-Guide-Viewing-Universe/dp/155407147X" target="_blank"><i class="fe fe-external-link"></i></a></td> </tr> <tr> <td><span class="item-title">Cosmos</span></td> <td><span class="item-des">Carl Sagan’s classic exploration of the universe, blending science, philosophy, and the human experience.</span></td> <td><span class="item-diff">Intermediate</span></td> <td><span class="item-category">Astrophysics</span></td> <td class="text-end"><a href="https://www.amazon.com/Cosmos-Carl-Sagan/dp/0345539435" target="_blank"><i class="fe fe-external-link"></i></a></td> </tr> <tr> <td><span class="item-title">The Backyard Astronomer's Guide</span></td> <td><span class="item-des">Comprehensive guidance for intermediate stargazers, including equipment choices and astrophotography tips.</span></td> <td><span class="item-diff">Intermediate</span></td> <td><span class="item-category">Equipment</span></td> <td class="text-end"><a href="https://www.amazon.com/Backyard-Astronomers-Guide-Terence-Dickinson/dp/1554073448" target="_blank"><i class="fe fe-external-link"></i></a></td> </tr> <tr> <td><span class="item-title">Astrophysics: A Very Short Introduction</span></td> <td><span class="item-des">A concise overview of astrophysics for those wanting to understand stars, galaxies, and the universe’s structure.</span></td> <td><span class="item-diff">Intermediate</span></td> <td><span class="item-category">Astrophysics</span></td> <td class="text-end"><a href="https://www.amazon.com/Astrophysics-Very-Short-Introduction-Introductions/dp/0199586454" target="_blank"><i class="fe fe-external-link"></i></a></td> </tr></tbody>
+                                        </table>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between">
+        
+                                        <!-- Pagination (prev) -->
+                                        <ul class="list-pagination-prev pagination pagination-tabs card-pagination">
+                                            <li class="page-item">
+                                                <a class="page-link ps-0 pe-4 border-end" href="#">
+                                                    <i class="fe fe-arrow-left me-1"></i> Prev
+                                                </a>
+                                            </li>
+                                        </ul>
+        
+                                        <!-- Pagination -->
+                                        <ul class="list-pagination pagination pagination-tabs card-pagination"></ul>
+        
+                                        <!-- Pagination (next) -->
+                                        <ul class="list-pagination-next pagination pagination-tabs card-pagination">
+                                            <li class="page-item">
+                                                <a class="page-link ps-4 pe-0 border-start" href="#">
+                                                    Next <i class="fe fe-arrow-right ms-1"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+        
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div> <!-- / .row -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- / .row -->
+</div>
+
+<!-- JAVASCRIPT -->
+<!-- Map JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Vendor JS -->
+<script src="./assets/js/vendor.bundle.js"></script>
+
+<!-- Theme JS -->
+<script src="./assets/js/theme.bundle.js"></script>
+
+</body>
+</html>

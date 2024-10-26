@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An app to learn Astronomy and get its updates." />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon"/>
+
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme-dark.bundle.css" id="stylesheetLight" disabled/>
+    <link rel="stylesheet" href="./assets/css/theme-dark.bundle.css" id="stylesheetDark" />
+
+    <style>body { display: none; }</style>
+
+    <!-- Title -->
+    <title>Astrophile</title>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-dark navbar-vibrant sticky-top navbar-expand-lg " id="topnav">
+    <div class="container">
+
+        <!-- Toggler -->
+        <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Brand -->
+        <a class="me-auto" href="./index.html">
+            <img src="./assets/img/logo.png" width="200" alt="..." >
+            <span class="badge bg-success-soft">Beta</span>
+        </a>
+
+        <!-- User -->
+        <div class="navbar-user">
+            <!-- Dropdown -->
+            <div class="dropdown">
+
+                <!-- Toggle -->
+                <a class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="./assets/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </a>
+
+                <!-- Menu -->
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a href="./about.html" class="dropdown-item">About</a>
+                    <a href="./discussions.html" class="dropdown-item">Discussions</a>
+                    <hr class="dropdown-divider">
+                    <a class="dropdown-item active">Codophobic</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse me-lg-auto order-lg-first" id="navbar">
+
+            <!-- Navigation -->
+            <ul class="navbar-nav me-lg-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="topnavPages" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="true">
+                        Pages
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="topnavPages">
+                        <li>
+                            <a class="dropdown-item" href="./learn.html">
+                                Learn
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./quiz.html">
+                                Quiz
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./explore.html">
+                                Explore
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="topnavUpdates" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="true">
+                        Updates
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="topnavUpdates">
+                        <li>
+                            <a class="dropdown-item" href="./news.html">
+                                News
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./events.html">
+                                Events
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./calender.html">
+                                Astronomical Calender
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+
+    </div> <!-- / .container -->
+</nav>
+
+<!-- CONTENT -->
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-12 col-md-6 offset-xl-2 offset-md-1 order-md-2 mb-5 mb-md-0">
+
+            <!-- Image -->
+            <div class="text-center">
+                <img src="assets/img/illustrations/astronaut.png" alt="..." class="img-fluid">
+            </div>
+
+        </div>
+        <div class="col-12 col-md-5 col-xl-4 order-md-1 my-5">
+
+            <!-- Heading -->
+            <h1 class="display-4 text-center mb-3">
+                Astrophile 🚀
+            </h1>
+
+            <!-- Subheading -->
+            <p class="text-muted text-center mb-5">
+                Definition: A person who loves astronomy or constantly gazes at the stars.
+            </p>
+
+            <h2>What is this?</h2>
+            <p>
+                <b>Astrophile</b> is a website for everyone who loves space and wants to learn more about it. Here, you can explore easy-to-understand lessons about astronomy, test your knowledge with fun quizzes, and see a live view of the solar system with real-time simulations. Stay up-to-date with the latest space news, find out about upcoming events, and check our astronomy calendar to see what’s happening in the night sky. Plus, you can join our community forum to connect with others, ask questions, and share your love for the stars.
+            </p>
+
+            <a href="./explore.html" class="btn btn-lg w-100 btn-primary mb-3">
+                Explore
+            </a>
+
+            <!-- Link -->
+            <div class="text-center">
+                <small class="text-muted text-center">
+                    Love our project? Give us a star on <a href="https://github.com/codejapoe/Astrophile" target="_blank">Github</a>.
+                </small>
+            </div>
+
+        </div>
+    </div> <!-- / .row -->
+</div> <!-- / .container -->
+
+<!-- JAVASCRIPT -->
+<!-- Map JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Vendor JS -->
+<script src="./assets/js/vendor.bundle.js"></script>
+
+<!-- Theme JS -->
+<script src="./assets/js/theme.bundle.js"></script>
+
+</body>
+</html>

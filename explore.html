@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An app to learn Astronomy and get its updates." />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon"/>
+
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="./assets/css/theme-dark.bundle.css" id="stylesheetLight" disabled/>
+    <link rel="stylesheet" href="./assets/css/theme-dark.bundle.css" id="stylesheetDark" />
+
+    <style>body { display: none; }</style>
+
+    <!-- Title -->
+    <title>Astrophile</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-dark navbar-vibrant sticky-top navbar-expand-lg " id="topnav">
+    <div class="container">
+
+        <!-- Toggler -->
+        <button class="navbar-toggler me-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Brand -->
+        <a class="me-auto" href="./index.html">
+            <img src="./assets/img/logo.png" width="200" alt="..." >
+            <span class="badge bg-success-soft">Beta</span>
+        </a>
+
+        <!-- User -->
+        <div class="navbar-user">
+            <!-- Dropdown -->
+            <div class="dropdown">
+
+                <!-- Toggle -->
+                <a class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="./assets/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </a>
+
+                <!-- Menu -->
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a href="./about.html" class="dropdown-item">About</a>
+                    <a href="./discussions.html" class="dropdown-item">Discussions</a>
+                    <hr class="dropdown-divider">
+                    <a class="dropdown-item active">Codophobic</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse me-lg-auto order-lg-first" id="navbar">
+
+            <!-- Navigation -->
+            <ul class="navbar-nav me-lg-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" id="topnavPages" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="true">
+                        Pages
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="topnavPages">
+                        <li>
+                            <a class="dropdown-item" href="./learn.html">
+                                Learn
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./quiz.html">
+                                Quiz
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item active" href="./explore.html">
+                                Explore
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="topnavUpdates" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="true">
+                        Updates
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="topnavUpdates">
+                        <li>
+                            <a class="dropdown-item" href="./news.html">
+                                News
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./events.html">
+                                Events
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./calender.html">
+                                Astronomical Calender
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+
+    </div> <!-- / .container -->
+</nav>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12">
+
+            <!-- Header -->
+            <div class="header">
+                <div class="header-body">
+                  <div class="row align-items-end">
+                    <div class="col">
+              
+                      <h6 class="header-pretitle">
+                        Query
+                      </h6>
+              
+                      <h1 class="header-title">
+                        Explore
+                      </h1><br>
+
+                      <p class="text-muted">Enjoy the live view of solar system and get to know about it.</p>
+                      
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+
+                        <!-- Card -->
+                        <div class="card" data-list='{"valueNames": ["item-title", "item-des", "item-diff", "item-category"], "page": 10, "pagination": {"paginationClass": "list-pagination"}}' id="videos">
+                            <div class="table-responsive">
+                                <table class="table table-sm table-hover table-nowrap card-table">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            <a class="list-sort text-muted" href="#">Name</a>
+                                        </th>
+                                        <th>
+                                            <a class="list-sort text-muted" href="#">Type</a>
+                                        </th>
+                                        <th>
+                                            <a class="list-sort text-muted" href="#">Average Temperature</a>
+                                        </th>
+                                        <th>
+                                            <a class="list-sort text-muted" href="#">Mass</a>
+                                        </th>
+                                        <th>
+                                            <a class="list-sort text-muted" href="#">Volume</a>
+                                        </th>
+                                        <th>
+                                            <a class="list-sort text-muted" href="#">Density</a>
+                                        </th>
+                                        <th>
+                                            <a class="list-sort text-muted" href="#">Gravity</a>
+                                        </th>
+                                        <th>
+                                            <a class="list-sort text-muted" href="#">Mean Radius</a>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                     
+                                    <tbody class="list fs-base" id="table-body">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> <!-- / .row -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<!-- Map JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Vendor JS -->
+<script src="./assets/js/vendor.bundle.js"></script>
+
+<!-- Theme JS -->
+<script src="./assets/js/theme.bundle.js"></script>
+
+<script>
+    async function fetchData(api) {
+        try {
+            const response = await fetch(`https://api.le-systeme-solaire.net/rest/bodies/${api}`);
+            const data = await response.json();
+            
+            // Select the table body element
+            const tableBody = document.getElementById('table-body');
+            
+            // Create a new table row with the required data
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${data.englishName || 'N/A'}</td>
+                <td>${data.bodyType || 'N/A'}</td>
+                <td>${data.avgTemp || 'N/A'} °K</td>
+                <td>${data.mass?.massValue || 'N/A'} x 10<sup>${data.mass?.massExponent || 'N/A'}</sup> kg</td>
+                <td>${data.vol?.volValue || 'N/A'} x 10<sup>${data.vol?.volExponent || 'N/A'}</sup> km³</td>
+                <td>${data.density || 'N/A'} g/cm³</td>
+                <td>${data.gravity || 'N/A'} m/s²</td>
+                <td>${data.meanRadius || 'N/A'} km</td>
+            `;
+
+            // Append the row to the table body
+            tableBody.appendChild(row);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+
+    // Call the fetchData function on page load
+    let apis = ['sun', 'mercury', 'venus', 'terre', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'];
+    apis.forEach(api => {
+        window.onload = fetchData(api);
+    });
+    window.open('./nasa-eye.html', '_blank').focus();
+</script>
+
+</body>
+</html>

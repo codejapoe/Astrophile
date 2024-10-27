@@ -63,7 +63,7 @@ onValue(posts, (snapshot) => {
                                         <i class="fe fe-more-vertical"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end">
-                                        <a href="${data[id]['name']}" target="_blank" class="dropdown-item">
+                                        <a href="${data[id]['social']}" target="_blank" class="dropdown-item">
                                             View Social Link
                                         </a>
                                     </div>
